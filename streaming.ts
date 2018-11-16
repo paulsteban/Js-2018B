@@ -68,31 +68,47 @@ const preguntas = [
 ];
 
 inquirer.prompt(preguntas).then(respuesta => {
-    const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"\n", "Usuarios"))
-    escribirArchivo$.subscribe(respuesta => {
-        console.log(respuesta)
-    });
+
+    if (respuesta.nombre != undefined){
+        const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"\n", "Usuarios"))
+        escribirArchivo$.subscribe(respuesta => {
+            console.log(respuesta)});
+}
+
+
+
     switch (respuesta.menu) {
         case "Ver un video":
-            console.log(respuesta.nombre+"");
-       /*     inquirer.prompt(videos)
-                .then(comic => {
-                    const leerYEscribirArchivo$ = rxjs.from(funciones.leerYEscribir(JSON.stringify(comic), "DC"));
-                    leerYEscribirArchivo$
-                        .subscribe(respuesta => {
-                            console.log(respuesta);
+            leerArchivo$.subscribe(respuesta => {
+                ArregloUsuarios = respuesta.contenido.split('-');
+                console.log("Busca tu video favorito");
+                 ArregloUsuarios.forEach(value => {
+                     if (value != '') {
+                         console.log(value);
+                     }
+                 });
+                    inquirer.prompt({
+                        type: "imput",
+                        name: "online",
+                        message: "Interesado en algo?",
+                     //   choices: ArregloUsuarios
+                    }).then(respuesta => {
+                        if(ArregloUsuarios.){
+                            console.log("Estas viendo: "+respuesta.online);}
                         });
-                });*/
+                });
+
+
+
             break;
 
         case   "Iniciar Grabacion":
-            console.log(respuesta.nombre+"");
             if (respuesta.nombre == undefined){
               /*  const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"", "Grabaciones"))
                 escribirArchivo$.subscribe(respuesta => {
                     console.log(respuesta)
                 });*/
-                console.log(respuesta.nombre+"1");
+                console.log("Usuario " +respuesta.nombre+" no puedes grabar si no inicias sesion");
             }else {
                 const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"\n", "Grabaciones"))
                 escribirArchivo$.subscribe(respuesta => {
@@ -111,7 +127,7 @@ case
           escribirArchivo$.subscribe(respuesta => {
               console.log(respuesta)
           });*/
-        console.log(respuesta.nombre+"1");
+        console.log("Vuelva pronto");
     }else {
         console.log(respuesta.nombre+"1");
             leerArchivo$.subscribe(respuesta => {

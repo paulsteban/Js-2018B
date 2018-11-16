@@ -14,34 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="streaming.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="streaming.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="127" column="2" lean-forward="true" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
+            <state relative-caret-position="306">
+              <caret line="95" column="43" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stream.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Modelo/stream.js">
+      <file leaf-file-name="prueba.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/prueba.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuarios" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Usuarios">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Grabaciones" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Grabaciones">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="170">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="14" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -49,8 +35,8 @@
       <file leaf-file-name="funciones.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -70,9 +56,11 @@
       <list>
         <option value="$PROJECT_DIR$/streaming.js" />
         <option value="$PROJECT_DIR$/funcionesarchivos.ts" />
-        <option value="$PROJECT_DIR$/streaming.ts" />
         <option value="$PROJECT_DIR$/funciones.js" />
         <option value="$PROJECT_DIR$/Modelo/stream.js" />
+        <option value="$PROJECT_DIR$/Modelo/prueba.js" />
+        <option value="$PROJECT_DIR$/Usuarios" />
+        <option value="$PROJECT_DIR$/streaming.ts" />
       </list>
     </option>
   </component>
@@ -151,7 +139,7 @@
             <path>
               <item name="Js-2018B" type="b2602c69:ProjectViewProjectNode" />
               <item name="Js-2018B" type="462c0819:PsiDirectoryNode" />
-              <item name="Modelo" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -179,6 +167,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Node.js.streaming.js">
+    <configuration name="prueba.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="prueba.js" working-dir="$PROJECT_DIR$/Modelo" />
+    <configuration name="streaming.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="streaming.js" working-dir="$PROJECT_DIR$" />
+    <list>
+      <item itemvalue="Node.js.prueba.js" />
+      <item itemvalue="Node.js.streaming.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.streaming.js" />
+        <item itemvalue="Node.js.prueba.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -190,26 +192,26 @@
       <option name="presentableId" value="Default" />
       <updated>1542249929725</updated>
       <workItem from="1542249932391" duration="11920000" />
-      <workItem from="1542377704316" duration="1585000" />
+      <workItem from="1542377704316" duration="9773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13505000" />
+    <option name="totallyTimeSpent" value="21693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32985657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32985657" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32985657" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -266,9 +268,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/funcionesarchivos.js" />
     <entry file="file://$PROJECT_DIR$/funcionesarchivos.ts" />
-    <entry file="file://$PROJECT_DIR$/Usuarios">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Grabaciones">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -276,24 +275,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/stream.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/internal/util/hostReportError.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        <state relative-caret-position="204">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Usuarios">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/prueba.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="127" column="2" lean-forward="true" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/stream.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="306">
+          <caret line="95" column="43" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
         </state>
       </provider>
     </entry>

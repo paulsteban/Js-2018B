@@ -9,5 +9,6 @@ export class   Stream   {
 
 }
 
+
 const  Usuario  =   new   Stream();
 
