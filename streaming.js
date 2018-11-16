@@ -6,6 +6,9 @@ var map = require("rxjs/operators").map;
 var funciones = require('./funciones');
 var leerArchivo$ = rxjs.from(funciones.leerArchivo("Usuarios"));
 var ArregloUsuarios = [];
+leerArchivo$.subscribe(function (respuesta) {
+    ArregloUsuarios = respuesta.contenido.split('-');
+});
 var preguntas = [
     {
         type: 'confirm',
@@ -72,23 +75,31 @@ inquirer.prompt(preguntas).then(function (respuesta) {
     }
     switch (respuesta.menu) {
         case "Ver un video":
-            leerArchivo$.subscribe(function (respuesta) {
-                ArregloUsuarios = respuesta.contenido.split('-');
-                console.log("Busca tu video favorito");
-                ArregloUsuarios.forEach(function (value) {
-                    if (value != '') {
-                        console.log(value);
-                    }
-                });
-                inquirer.prompt({
-                    type: "imput",
-                    name: "online",
-                    message: "Interesado en algo?",
-                }).then(function (respuesta) {
-                    if (ArregloUsuarios.) {
-                        console.log("Estas viendo: " + respuesta.online);
-                    }
-                });
+            console.log("Busca tu video favorito");
+            ArregloUsuarios.forEach(function (value) {
+                if (value != '') {
+                    console.log(value);
+                }
+            });
+            inquirer.prompt({
+                type: "imput",
+                name: "online",
+                message: "Interesado en algo?",
+            }).then(function (respuesta) {
+                var Comparar = ArregloUsuarios.filter(function (v) {
+                    ArregloUsuarios.forEach(function (value) {
+                        if (value != '') {
+                            console.log("123" + value);
+                        }
+                    });
+                    v == respuesta.online + "";
+                }).some(function (v) { return v != undefined; });
+                if (Comparar) {
+                    console.log("Disfruta tu video de " + respuesta.online);
+                }
+                else {
+                    console.log("Usuario no encontrado");
+                }
             });
             break;
         case "Iniciar Grabacion":

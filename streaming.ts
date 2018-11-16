@@ -6,7 +6,13 @@ const distinct = require("rxjs/operators").distinct;
 const map = require("rxjs/operators").map;
 const funciones = require('./funciones');
 const leerArchivo$ = rxjs.from(funciones.leerArchivo("Usuarios"));
+
 let ArregloUsuarios = [];
+leerArchivo$.subscribe(respuesta => {
+    ArregloUsuarios = respuesta.contenido.split('-');
+
+
+});
 const preguntas = [
     {
         type: 'confirm',
@@ -79,26 +85,34 @@ inquirer.prompt(preguntas).then(respuesta => {
 
     switch (respuesta.menu) {
         case "Ver un video":
-            leerArchivo$.subscribe(respuesta => {
-                ArregloUsuarios = respuesta.contenido.split('-');
-                console.log("Busca tu video favorito");
-                 ArregloUsuarios.forEach(value => {
-                     if (value != '') {
-                         console.log(value);
-                     }
-                 });
-                    inquirer.prompt({
-                        type: "imput",
-                        name: "online",
-                        message: "Interesado en algo?",
-                     //   choices: ArregloUsuarios
-                    }).then(respuesta => {
-                        if(ArregloUsuarios.){
-                            console.log("Estas viendo: "+respuesta.online);}
-                        });
-                });
+            console.log("Busca tu video favorito");
+            ArregloUsuarios.forEach(value => {
+                if (value != '') {
+                    console.log(value);
+                }
+            });
+
+            inquirer.prompt({
+                type: "imput",
+                name: "online",
+                message: "Interesado en algo?",
+                //   choices: ArregloUsuarios
+            }).then(respuesta => {
 
 
+                const Comparar = ArregloUsuarios.filter(v=>{
+                    ArregloUsuarios.forEach(value => {
+                        if (value != '') {
+                            console.log("123"+value);
+                        }
+                    });
+                    v ==respuesta.online+""}).some(v => v != undefined);
+
+                if(Comparar){
+                    console.log("Disfruta tu video de "+ respuesta.online)
+                }else
+                { console.log("Usuario no encontrado")}
+            });
 
             break;
 

@@ -5,6 +5,7 @@ const fs = require("fs");
 const leerArchivo$ = rxjs.from(funciones.leerArchivo("../Usuarios"));
 
 
+const aux = "Prueba";
 
 leerArchivo$.subscribe(respuesta => {
     misComics = respuesta.contenido.split('-');
@@ -15,8 +16,17 @@ leerArchivo$.subscribe(respuesta => {
     });
 });
 
-let usuariosA = [];
-let content;/*
+let usuariosA = ["Prueba","Helado","1"];
+let content;
+
+const Comparar = usuariosA.filter(v=> v =="1").some(v => v != undefined);
+
+if(Comparar){
+    console.log("hola")
+}
+/*
+
+
 // First I want to read the file
 fs.readFile('../Usuarios', 'utf-8', function read(err, data) {
     if (err) {
