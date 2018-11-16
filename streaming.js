@@ -7,7 +7,7 @@ var funciones = require('./funciones');
 var leerArchivo$ = rxjs.from(funciones.leerArchivo("Usuarios"));
 var ArregloUsuarios = [];
 leerArchivo$.subscribe(function (respuesta) {
-    ArregloUsuarios = respuesta.contenido.split('-');
+    ArregloUsuarios = respuesta.contenido.split('\n');
 });
 var preguntas = [
     {
@@ -67,12 +67,6 @@ var preguntas = [
     }
 ];
 inquirer.prompt(preguntas).then(function (respuesta) {
-    if (respuesta.nombre != undefined) {
-        var escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre + "\n", "Usuarios"));
-        escribirArchivo$.subscribe(function (respuesta) {
-            console.log(respuesta);
-        });
-    }
     switch (respuesta.menu) {
         case "Ver un video":
             console.log("Busca tu video favorito");
@@ -86,20 +80,22 @@ inquirer.prompt(preguntas).then(function (respuesta) {
                 name: "online",
                 message: "Interesado en algo?",
             }).then(function (respuesta) {
-                var Comparar = ArregloUsuarios.filter(function (v) {
-                    ArregloUsuarios.forEach(function (value) {
-                        if (value != '') {
-                            console.log("123" + value);
-                        }
-                    });
-                    v == respuesta.online + "";
-                }).some(function (v) { return v != undefined; });
-                if (Comparar) {
-                    console.log("Disfruta tu video de " + respuesta.online);
-                }
-                else {
-                    console.log("Usuario no encontrado");
-                }
+                var imprimir = ArregloUsuarios.forEach(function (value, index, array) {
+                    if (value == respuesta.online) {
+                        console.log("Bienvenido disfruta tu video");
+                    }
+                    if (index == array.length - 1 && value != respuesta.online) {
+                        console.log("Video no encontrado");
+                    }
+                });
+                /*      const Comparar = ArregloUsuarios.filter(v=>{
+
+          v ==respuesta.online+""}).some(v => v != undefined);
+
+      if(Comparar){
+          console.log("Disfruta tu video de "+ respuesta.online)
+      }else
+      { console.log("Usuario no encontrado")}*/
             });
             break;
         case "Iniciar Grabacion":
@@ -128,11 +124,19 @@ inquirer.prompt(preguntas).then(function (respuesta) {
             }
             else {
                 console.log(respuesta.nombre + "1");
+                var borrarA_1 = [];
                 leerArchivo$.subscribe(function (respuesta) {
-                    ArregloUsuarios = respuesta.contenido.split('-');
+                    borrarA_1 = respuesta.contenido.split('\n');
+                    borrarA_1.pop();
                     // borrar archivo
                 });
             }
             break;
+    }
+    if (respuesta.nombre != undefined) {
+        var escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre + "\n", "Usuarios"));
+        escribirArchivo$.subscribe(function (respuesta) {
+            console.log(respuesta);
+        });
     }
 });

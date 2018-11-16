@@ -9,7 +9,7 @@ const leerArchivo$ = rxjs.from(funciones.leerArchivo("Usuarios"));
 
 let ArregloUsuarios = [];
 leerArchivo$.subscribe(respuesta => {
-    ArregloUsuarios = respuesta.contenido.split('-');
+    ArregloUsuarios = respuesta.contenido.split('\n');
 
 
 });
@@ -74,16 +74,7 @@ const preguntas = [
 ];
 
 inquirer.prompt(preguntas).then(respuesta => {
-
-    if (respuesta.nombre != undefined){
-        const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"\n", "Usuarios"))
-        escribirArchivo$.subscribe(respuesta => {
-            console.log(respuesta)});
-}
-
-
-
-    switch (respuesta.menu) {
+        switch (respuesta.menu) {
         case "Ver un video":
             console.log("Busca tu video favorito");
             ArregloUsuarios.forEach(value => {
@@ -100,18 +91,33 @@ inquirer.prompt(preguntas).then(respuesta => {
             }).then(respuesta => {
 
 
-                const Comparar = ArregloUsuarios.filter(v=>{
-                    ArregloUsuarios.forEach(value => {
-                        if (value != '') {
-                            console.log("123"+value);
-                        }
-                    });
+
+                const imprimir=   ArregloUsuarios.forEach((value,index,array) => {
+
+                      if (value == respuesta.online){
+                          console.log("Bienvenido disfruta tu video");
+
+                      }
+                    if(index ==array.length-1 && value != respuesta.online){
+
+
+                        console.log("Video no encontrado");
+                    }
+
+
+
+
+
+                });
+
+                          /*      const Comparar = ArregloUsuarios.filter(v=>{
+
                     v ==respuesta.online+""}).some(v => v != undefined);
 
                 if(Comparar){
                     console.log("Disfruta tu video de "+ respuesta.online)
                 }else
-                { console.log("Usuario no encontrado")}
+                { console.log("Usuario no encontrado")}*/
             });
 
             break;
@@ -134,8 +140,7 @@ inquirer.prompt(preguntas).then(respuesta => {
 break;
 
 case
-"Salir Sesion"
-:
+"Salir Sesion":
     if (respuesta.nombre == undefined){
         /*  const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"", "Grabaciones"))
           escribirArchivo$.subscribe(respuesta => {
@@ -144,8 +149,11 @@ case
         console.log("Vuelva pronto");
     }else {
         console.log(respuesta.nombre+"1");
+        let borrarA =[];
             leerArchivo$.subscribe(respuesta => {
-                ArregloUsuarios = respuesta.contenido.split('-');
+                borrarA = respuesta.contenido.split('\n');
+                borrarA.pop();
+                
                 // borrar archivo
 
             });
@@ -154,7 +162,11 @@ case
 break;
 
 }
-
+    if (respuesta.nombre != undefined){
+        const escribirArchivo$ = rxjs.from(funciones.escribirArchivo(respuesta.nombre+"\n", "Usuarios"))
+        escribirArchivo$.subscribe(respuesta => {
+            console.log(respuesta)});
+    }
 })
 ;
 

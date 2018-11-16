@@ -6,7 +6,7 @@ const leerArchivo$ = rxjs.from(funciones.leerArchivo("../Usuarios"));
 
 
 const aux = "Prueba";
-
+/*
 leerArchivo$.subscribe(respuesta => {
     misComics = respuesta.contenido.split('-');
     misComics.forEach(value => {
@@ -15,7 +15,7 @@ leerArchivo$.subscribe(respuesta => {
         }
     });
 });
-
+*/
 let usuariosA = ["Prueba","Helado","1"];
 let content;
 

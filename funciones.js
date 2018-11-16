@@ -10,8 +10,7 @@ module.exports.escribirArchivo = (texto, nombreArchivo) => {
                     reject(err);
                 } else {
                     resolve({
-                        mesaje: "Ingresado correctamente",
-                        comic: texto
+                        mesaje: "Ingresado correctamente"
                     });
                 }
             })
